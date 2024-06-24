@@ -22,28 +22,28 @@
     private void OnShowingAsync(AccordionEventArgs args)
     {
         ToastService.Notify(new ToastMessage(
-            type: ToastType.Primary,
+            type: BsColor.Primary,
             message: $"Event Name: Showing, AccordionItemName: {args.Name}, AccordionItemTitle: {args.Title}"));
     }
 
     private void OnShownAsync(AccordionEventArgs args)
     {
         ToastService.Notify(new ToastMessage(
-            type: ToastType.Primary,
+            type: BsColor.Primary,
             message: $"Event Name: OnShown, AccordionItemName: {args.Name}, AccordionItemTitle: {args.Title}"));
     }
 
     private void OnHidingAsync(AccordionEventArgs args)
     {
         ToastService.Notify(new ToastMessage(
-            type: ToastType.Primary,
+            type: BsColor.Primary,
             message: $"Event Name: OnHiding, AccordionItemName: {args.Name}, AccordionItemTitle: {args.Title}"));
     }
 
     private void OnHiddenAsync(AccordionEventArgs args)
     {
         ToastService.Notify(new ToastMessage(
-            type: ToastType.Primary,
+            type: BsColor.Primary,
             message: $"Event Name: OnHidden, AccordionItemName: {args.Name}, AccordionItemTitle: {args.Title}"));
     }
 }

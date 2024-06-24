@@ -3,15 +3,15 @@
 </Progress>
 
 
-<Button Type="ButtonType.Button" Color="ButtonColor.Success" Size="ButtonSize.Small" @onclick="() => SetColor(ProgressColor.Success)">Set Color</Button>
-<Button Type="ButtonType.Button" Color="ButtonColor.Info" Size="ButtonSize.Small" @onclick="() => SetColor(ProgressColor.Info)">Set Color</Button>
-<Button Type="ButtonType.Button" Color="ButtonColor.Warning" Size="ButtonSize.Small" @onclick="() => SetColor(ProgressColor.Warning)">Set Color</Button>
-<Button Type="ButtonType.Button" Color="ButtonColor.Danger" Size="ButtonSize.Small" @onclick="() => SetColor(ProgressColor.Danger)">Set Color</Button>
-<Button Type="ButtonType.Button" Color="ButtonColor.Primary" Size="ButtonSize.Small" @onclick="() => SetColor(ProgressColor.Primary)">Set Color</Button>
-<Button Type="ButtonType.Button" Color="ButtonColor.Secondary" Size="ButtonSize.Small" @onclick="() => SetColor(ProgressColor.Secondary)">Set Color</Button>
-<Button Type="ButtonType.Button" Color="ButtonColor.Dark" Size="ButtonSize.Small" @onclick="() => SetColor(ProgressColor.Dark)">Set Color</Button>
+<Button Type="@ButtonType.Button" Color="BsColor.Success" Size="ButtonSize.Small" @onclick="() => SetColor(BsColor.Success)">Set Color</Button>
+<Button Type="@ButtonType.Button" Color="BsColor.Info" Size="ButtonSize.Small" @onclick="() => SetColor(BsColor.Info)">Set Color</Button>
+<Button Type="@ButtonType.Button" Color="BsColor.Warning" Size="ButtonSize.Small" @onclick="() => SetColor(BsColor.Warning)">Set Color</Button>
+<Button Type="@ButtonType.Button" Color="BsColor.Danger" Size="ButtonSize.Small" @onclick="() => SetColor(BsColor.Danger)">Set Color</Button>
+<Button Type="@ButtonType.Button" Color="BsColor.Primary" Size="ButtonSize.Small" @onclick="() => SetColor(BsColor.Primary)">Set Color</Button>
+<Button Type="@ButtonType.Button" Color="BsColor.Secondary" Size="ButtonSize.Small" @onclick="() => SetColor(BsColor.Secondary)">Set Color</Button>
+<Button Type="@ButtonType.Button" Color="BsColor.Dark" Size="ButtonSize.Small" @onclick="() => SetColor(BsColor.Dark)">Set Color</Button>
 
 @code {
     ProgressBar progressBar = default!;
-    private void SetColor(ProgressColor color) => progressBar.SetColor(color);
+    private void SetColor(BsColor color) => progressBar.Color = color;
 }

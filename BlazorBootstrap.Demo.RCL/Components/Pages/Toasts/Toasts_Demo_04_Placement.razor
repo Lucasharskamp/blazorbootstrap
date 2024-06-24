@@ -1,14 +1,14 @@
 ﻿<Toasts class="p-3" Messages="messages" Placement="@toastsPlacement" />
 
-<Button Color="ButtonColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.TopLeft)">Top Left</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.TopCenter)">Top Center</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.TopRight)">Top Right</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.MiddleLeft)">Middle Left</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.MiddleCenter)">Middle Center</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.MiddleRight)">Middle Right</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.BottomLeft)">Bottom Left</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.BottomCenter)">Bottom Center</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.BottomRight)">Bottom Right</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.TopLeft)">Top Left</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.TopCenter)">Top Center</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.TopRight)">Top Right</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.MiddleLeft)">Middle Left</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.MiddleCenter)">Middle Center</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.MiddleRight)">Middle Right</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.BottomLeft)">Bottom Left</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.BottomCenter)">Bottom Center</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ChangePlacement(ToastsPlacement.BottomRight)">Bottom Right</Button>
 
 @code {
     ToastsPlacement toastsPlacement = ToastsPlacement.TopRight;
@@ -21,7 +21,7 @@
             messages.Add(
                 new ToastMessage()
                     {
-                        Type = ToastType.Success,
+                        Type = BsColor.Success,
                         Title = "Blazor Bootstrap",
                         HelpText = $"{DateTime.Now}",
                         Message = $"Hello, world! This is a toast message. DateTime: {DateTime.Now}",

@@ -8,16 +8,16 @@ public partial class MainLayout : MainLayoutBase
         {
             new (){ Id = "1", Text = "Getting Started", Href = "/getting-started", IconName = IconName.HouseDoorFill },
 
-            new (){ Id = "2", Text = "Layout", IconName = IconName.LayoutTextWindowReverse, IconColor = IconColor.Success },
+            new (){ Id = "2", Text = "Layout", IconName = IconName.LayoutTextWindowReverse, IconColor = BsColor.Success },
             new (){ Id = "200", Text = "Blazor WebAssembly", Href = "/layout-setup/blazor-webassembly", IconName = IconName.BrowserEdge, ParentId = "2" },
             new (){ Id = "201", Text = "Blazor Server", Href = "/layout-setup/blazor-server", IconName = IconName.Server, ParentId = "2" },
 
-            new (){ Id = "3", Text = "Content", IconName = IconName.BodyText, IconColor = IconColor.Primary },
+            new (){ Id = "3", Text = "Content", IconName = IconName.BodyText, IconColor = BsColor.Primary },
             new (){ Id = "300", Text = "Icons", Href = "/icons", IconName = IconName.PersonSquare, ParentId = "3" },
             new (){ Id = "301", Text = "Images", Href = "/images", IconName = IconName.Image, ParentId = "3" },
             new (){ Id = "302", Text = "CSS Generator", Href = "/customcss", IconName = IconName.WrenchAdjustableCircle, ParentId = "3" },
 
-            new (){ Id = "4", Text = "Forms", IconName = IconName.InputCursorText, IconColor = IconColor.Success },
+            new (){ Id = "4", Text = "Forms", IconName = IconName.InputCursorText, IconColor = BsColor.Success },
             new (){ Id = "400", Text = "Auto Complete", Href = "/autocomplete", IconName = IconName.InputCursorText, ParentId = "4" },
             new (){ Id = "401", Text = "Currency Input", Href = "/form/currency-input", IconName = IconName.CurrencyDollar, ParentId = "4" },
             new (){ Id = "402", Text = "Date Input", Href = "/form/date-input", IconName = IconName.CalendarDate, ParentId = "4" },
@@ -26,7 +26,7 @@ public partial class MainLayout : MainLayoutBase
             new (){ Id = "405", Text = "Switch", Href = "/form/switch", IconName = IconName.ToggleOn, ParentId = "4" },
             new (){ Id = "406", Text = "Time Input", Href = "/form/time-input", IconName = IconName.ClockFill, ParentId = "4" },
 
-            new (){ Id = "5", Text = "Components", IconName = IconName.GearFill, IconColor = IconColor.Danger },
+            new (){ Id = "5", Text = "Components", IconName = IconName.GearFill, IconColor = BsColor.Danger },
             new (){ Id = "500", Text = "Accordion", Href = "/accordion", IconName = IconName.ChevronBarExpand, ParentId = "5" },
             new (){ Id = "501", Text = "Alerts", Href = "/alerts", IconName = IconName.CheckCircleFill, ParentId = "5" },
             new (){ Id = "502", Text = "Badge", Href = "/badge", IconName = IconName.AppIndicator, ParentId = "5" },
@@ -76,13 +76,13 @@ public partial class MainLayout : MainLayoutBase
             new (){ Id = "526", Text = "Toasts", Href = "/toasts", IconName = IconName.ExclamationTriangleFill, ParentId = "5" },
             new (){ Id = "527", Text = "Tooltips", Href = "/tooltips", IconName = IconName.ChatSquareDotsFill, ParentId = "5" },
 
-            new (){ Id = "6", Text = "Data Visualization", IconName = IconName.BarChartFill, IconColor = IconColor.Warning },
+            new (){ Id = "6", Text = "Data Visualization", IconName = IconName.BarChartFill, IconColor = BsColor.Warning },
             new (){ Id = "600", Text = "Bar Chart", Href = "/charts/bar-chart", IconName = IconName.BarChartFill, ParentId = "6", Match = NavLinkMatch.All },
             new (){ Id = "601", Text = "Doughnut Chart", Href = "/charts/doughnut-chart", IconName = IconName.CircleFill, ParentId = "6", Match = NavLinkMatch.All },
             new (){ Id = "602", Text = "Line Chart", Href = "/charts/line-chart", IconName = IconName.GraphUp, ParentId = "6", Match = NavLinkMatch.All },
             new (){ Id = "603", Text = "Pie Chart", Href = "/charts/pie-chart", IconName = IconName.PieChartFill, ParentId = "6", Match = NavLinkMatch.All },
 
-            new(){ Id = "7", Text = "Services", IconName = IconName.WrenchAdjustableCircleFill, IconColor = IconColor.Success },
+            new(){ Id = "7", Text = "Services", IconName = IconName.WrenchAdjustableCircleFill, IconColor = BsColor.Success },
             new (){ Id = "700", Text = "Modal Service", Href = "/modal-service", IconName = IconName.WindowStack, ParentId = "7" },
         };
 

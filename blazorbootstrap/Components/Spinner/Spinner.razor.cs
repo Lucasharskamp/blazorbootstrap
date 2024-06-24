@@ -67,7 +67,7 @@ public partial class Spinner : BlazorBootstrapComponentBase
             switch (parameter.Name)
             {
                 case nameof(Class): Class = (string)parameter.Value; break;
-                case nameof(Color): Color = (SpinnerColor)parameter.Value; break;
+                case nameof(Color): Color = (BsColor)parameter.Value; break;
                 case nameof(Id): Id = (string)parameter.Value!; break;
                 case nameof(Size): Size = (SpinnerSize)parameter.Value; break;
                 case nameof(Style): Style = (string)parameter.Value; break;
@@ -93,17 +93,17 @@ public partial class Spinner : BlazorBootstrapComponentBase
     protected override string? ClassNames =>
         BuildClassNames(Class,
             (Type.ToSpinnerTypeClass(), true),
-            (Color.ToSpinnerColorClass(), true),
+            (Color.ToTextColorClass(), true),
             ($"{Type.ToSpinnerTypeClass()}-{Size.ToSpinnerSizeClass()}", Type is (SpinnerType.Border or SpinnerType.Grow)));
 
     /// <summary>
     /// Gets or sets the color of the spinner.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="SpinnerColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public SpinnerColor Color { get; set; } = SpinnerColor.None;
+    public BsColor Color { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets the size of the spinner.

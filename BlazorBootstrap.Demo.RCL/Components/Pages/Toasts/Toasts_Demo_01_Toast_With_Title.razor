@@ -1,19 +1,19 @@
 ﻿<Toasts class="p-3" Messages="messages" Placement="ToastsPlacement.TopRight" />
 
-<Button Color="ButtonColor.Primary" @onclick="() => ShowMessage(ToastType.Primary)">Primary Toast</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ShowMessage(ToastType.Secondary)">Secondary Toast</Button>
-<Button Color="ButtonColor.Success" @onclick="() => ShowMessage(ToastType.Success)">Success Toast</Button>
-<Button Color="ButtonColor.Danger" @onclick="() => ShowMessage(ToastType.Danger)">Danger Toast</Button>
-<Button Color="ButtonColor.Warning" @onclick="() => ShowMessage(ToastType.Warning)">Warning Toast</Button>
-<Button Color="ButtonColor.Info" @onclick="() => ShowMessage(ToastType.Info)">Info Toast</Button>
-<Button Color="ButtonColor.Dark" @onclick="() => ShowMessage(ToastType.Dark)">Dark Toast</Button>
+<Button Color="BsColor.Primary" @onclick="() => ShowMessage(BsColor.Primary)">Primary Toast</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ShowMessage(BsColor.Secondary)">Secondary Toast</Button>
+<Button Color="BsColor.Success" @onclick="() => ShowMessage(BsColor.Success)">Success Toast</Button>
+<Button Color="BsColor.Danger" @onclick="() => ShowMessage(BsColor.Danger)">Danger Toast</Button>
+<Button Color="BsColor.Warning" @onclick="() => ShowMessage(BsColor.Warning)">Warning Toast</Button>
+<Button Color="BsColor.Info" @onclick="() => ShowMessage(BsColor.Info)">Info Toast</Button>
+<Button Color="BsColor.Dark" @onclick="() => ShowMessage(BsColor.Dark)">Dark Toast</Button>
 
 @code {
     List<ToastMessage> messages = new List<ToastMessage>();
 
-    private void ShowMessage(ToastType toastType) => messages.Add(CreateToastMessage(toastType));
+    private void ShowMessage(BsColor toastType) => messages.Add(CreateToastMessage(toastType));
 
-    private ToastMessage CreateToastMessage(ToastType toastType)
+    private ToastMessage CreateToastMessage(BsColor toastType)
     => new ToastMessage
         {
             Type = toastType,

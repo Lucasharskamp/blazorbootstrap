@@ -105,7 +105,7 @@ public partial class SimpleToast : BlazorBootstrapComponentBase
         BuildClassNames(Class,
             (BootstrapClass.Toast, true),
             (ToastMessage!.Type.ToToastTextColorClass(), ToastMessage is not null),
-            (ToastMessage!.Type.ToToastBackgroundColorClass(), ToastMessage is not null));
+            (ToastMessage!.Type.ToBackgroundColorClass(), ToastMessage is not null));
 
     /// <summary>
     /// Gets or sets the auto hide state.

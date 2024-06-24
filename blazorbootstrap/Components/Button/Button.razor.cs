@@ -20,7 +20,7 @@ public partial class Button : BlazorBootstrapComponentBase
 
     private string? previousTo = default!;
 
-    private TooltipColor previousTooltipColor = default!;
+    private BsColor previousTooltipColor = default!;
 
     private string previousTooltipTitle = default!;
 
@@ -255,7 +255,7 @@ public partial class Button : BlazorBootstrapComponentBase
                 case nameof(Block): Block = (bool)parameter.Value; break;
                 case nameof(ChildContent): ChildContent = (RenderFragment)parameter.Value; break;
                 case nameof(Class): Class = (string)parameter.Value; break;
-                case nameof(Color): Color = (ButtonColor)parameter.Value; break;
+                case nameof(Color): Color = (BsColor)parameter.Value; break;
                 case nameof(Disabled): Disabled = (bool)parameter.Value; break;
                 case nameof(Id): Id = (string)parameter.Value; break;
                 case nameof(Loading): Loading = (bool)parameter.Value; break;
@@ -268,7 +268,7 @@ public partial class Button : BlazorBootstrapComponentBase
                 case nameof(TabIndex): TabIndex = (int?)parameter.Value; break;
                 case nameof(Target): Target = (Target)parameter.Value; break;
                 case nameof(To): To = (string?)parameter.Value; break;
-                case nameof(TooltipColor): TooltipColor = (TooltipColor)parameter.Value; break;
+                case nameof(TooltipColor): TooltipColor = (BsColor)parameter.Value; break;
                 case nameof(TooltipPlacement): TooltipPlacement = (TooltipPlacement)parameter.Value; break;
                 case nameof(TooltipTitle): TooltipTitle = (string)parameter.Value; break;
                 case nameof(Type): 
@@ -305,8 +305,8 @@ public partial class Button : BlazorBootstrapComponentBase
     protected override string? ClassNames =>
         BuildClassNames(Class,
             (BootstrapClass.Button, true),
-            (Color.ToButtonColorClass(), Color != ButtonColor.None && !Outline),
-            (Color.ToButtonOutlineColorClass(), Color != ButtonColor.None && Outline),
+            (Color.ToBackgroundColorClass(), Color != BsColor.Transparent && !Outline),
+            (Color.ToButtonOutlineColorClass(), Color != BsColor.Transparent && Outline),
             (Size.ToButtonSizeClass(), Size != ButtonSize.None),
             (BootstrapClass.ButtonDisabled, Disabled && Type == ButtonType.Link),
             (BootstrapClass.ButtonActive, Active),
@@ -347,10 +347,10 @@ public partial class Button : BlazorBootstrapComponentBase
     /// Gets or sets the button color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="ButtonColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public ButtonColor Color { get; set; } = ButtonColor.None;
+    public BsColor Color { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets the button disabled state.
@@ -448,10 +448,10 @@ public partial class Button : BlazorBootstrapComponentBase
     /// Gets or sets the button tooltip color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="TooltipColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public TooltipColor TooltipColor { get; set; } = TooltipColor.None;
+    public BsColor TooltipColor { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets the button tooltip placement.

@@ -20,14 +20,14 @@ public partial class Callout : BlazorBootstrapComponentBase
                 case nameof(ChildContent): ChildContent = (RenderFragment)parameter.Value; break;
                 case nameof(Class): Class = (string)parameter.Value; break;
                 case nameof(Color): 
-                    Color = (CalloutColor)parameter.Value;
+                    Color = (BsColor)parameter.Value;
                     IconName = Color switch
                     {
-                        CalloutColor.Default => IconName.InfoCircleFill,
-                        CalloutColor.Info => IconName.InfoCircleFill,
-                        CalloutColor.Warning => IconName.ExclamationTriangleFill,
-                        CalloutColor.Danger => IconName.Fire,
-                        CalloutColor.Success => IconName.Lightbulb,
+                        BsColor.Default => IconName.InfoCircleFill,
+                        BsColor.Info => IconName.InfoCircleFill,
+                        BsColor.Warning => IconName.ExclamationTriangleFill,
+                        BsColor.Danger => IconName.Fire,
+                        BsColor.Success => IconName.Lightbulb,
                         _ => IconName.InfoCircleFill
                     };
                     break;
@@ -45,11 +45,11 @@ public partial class Callout : BlazorBootstrapComponentBase
         {
             Heading = Color switch
             {
-                CalloutColor.Default => "NOTE",
-                CalloutColor.Info => "INFO",
-                CalloutColor.Warning => "WARNING",
-                CalloutColor.Danger => "DANGER",
-                CalloutColor.Success => "TIP",
+                BsColor.Default => "NOTE",
+                BsColor.Info => "INFO",
+                BsColor.Warning => "WARNING",
+                BsColor.Danger => "DANGER",
+                BsColor.Success => "TIP",
                 _ => ""
             };
         }
@@ -80,10 +80,10 @@ public partial class Callout : BlazorBootstrapComponentBase
     /// Gets or sets the callout color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="CalloutColor.Default" />.
+    /// Default value is <see cref="BsColor.Default" />.
     /// </remarks>
     [Parameter]
-    public CalloutColor Color { get; set; } = CalloutColor.Default;
+    public BsColor Color { get; set; } = BsColor.Default;
 
     /// <summary>
     /// Gets or sets the callout heading.

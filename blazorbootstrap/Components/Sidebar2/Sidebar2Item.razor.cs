@@ -133,12 +133,12 @@ public partial class Sidebar2Item : BlazorBootstrapComponentBase
     /// Gets or sets the icon color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="IconColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public IconColor IconColor { get; set; }
+    public BsColor IconColor { get; set; } = BsColor.Transparent;
 
-    private string IconColorCssClass => IconColor.ToIconColorClass();
+    private string IconColorCssClass => IconColor.ToTextColorClass();
 
     /// <summary>
     /// Gets or sets the icon name.

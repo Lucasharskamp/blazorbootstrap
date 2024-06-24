@@ -37,7 +37,7 @@ public class ConfirmDialogOptions
     /// <summary>
     /// Gets or sets the 'No' button color. <see cref="ButtonColor" />
     /// </summary>
-    public ButtonColor NoButtonColor { get; set; } = ButtonColor.Secondary;
+    public BsColor NoButtonColor { get; set; } = BsColor.Secondary;
 
     /// <summary>
     /// Gets or sets the 'No' button text.
@@ -50,9 +50,12 @@ public class ConfirmDialogOptions
     public DialogSize Size { get; set; }
 
     /// <summary>
-    /// Gets or sets the 'Yes' button color. <see cref="ButtonColor" />
+    /// Gets or sets the 'Yes' button color.  
     /// </summary>
-    public ButtonColor YesButtonColor { get; set; } = ButtonColor.Primary;
+    /// <remarks>
+    /// Default value is <see cref="BsColor.Primary" />.
+    /// </remarks>
+    public BsColor YesButtonColor { get; set; } = BsColor.Primary;
 
     /// <summary>
     /// Gets or sets the 'Yes' button text.

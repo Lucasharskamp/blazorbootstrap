@@ -3,12 +3,12 @@
         This is a vertically centered modal.
     </BodyTemplate>
     <FooterTemplate>
-        <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
-        <Button Color="ButtonColor.Primary">Save changes</Button>
+        <Button Color="BsColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+        <Button Color="BsColor.Primary">Save changes</Button>
     </FooterTemplate>
 </Modal>
 
-<Button Color="ButtonColor.Primary" @onclick="OnShowModalClick">Vertically centered modal</Button>
+<Button Color="BsColor.Primary" @onclick="OnShowModalClick">Vertically centered modal</Button>
 
 @code {
     private Modal modal = default!;

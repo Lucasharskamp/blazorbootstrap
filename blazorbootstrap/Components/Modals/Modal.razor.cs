@@ -12,7 +12,7 @@ public partial class Modal : BlazorBootstrapComponentBase
 
     private Type? childComponent = default!;
 
-    private ButtonColor footerButtonColor = ButtonColor.Secondary;
+    private BsColor footerButtonColor = BsColor.Secondary;
 
     private string footerButtonCssClass = string.Empty;
 
@@ -185,7 +185,7 @@ public partial class Modal : BlazorBootstrapComponentBase
                 case nameof(BodyCssClass): BodyCssClass = (string)parameter.Value!; break;
                 case nameof(BodyTemplate): BodyTemplate = (RenderFragment)parameter.Value!; break;
                 case nameof(Class): Class = (string)parameter.Value!; break;
-                case nameof(CloseIconColor): CloseIconColor = (IconColor)parameter.Value!; break;
+                case nameof(CloseIconColor): CloseIconColor = (BsColor)parameter.Value!; break;
                 case nameof(CloseOnEscape): CloseOnEscape = (bool)parameter.Value!; break;
                 case nameof(DialogCssClass): DialogCssClass = (string)parameter.Value!; break;
                 case nameof(FooterCssClass): FooterCssClass = (string)parameter.Value!; break;
@@ -246,10 +246,10 @@ public partial class Modal : BlazorBootstrapComponentBase
     /// Gets or sets the close icon color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="IconColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public IconColor CloseIconColor { get; set; } = IconColor.None;
+    public BsColor CloseIconColor { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Indicates whether the modal closes when escape key is pressed.

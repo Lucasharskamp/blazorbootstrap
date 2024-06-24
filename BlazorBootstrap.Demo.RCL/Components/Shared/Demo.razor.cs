@@ -4,7 +4,7 @@ public partial class Demo : ComponentBase
 {
     #region Fields and Constants
 
-    private IconColor clipboardTooltipIconColor = IconColor.Dark;
+    private BsColor clipboardTooltipIconColor = BsColor.Dark;
 
     private IconName clipboardTooltipIconName = IconName.Clipboard;
 
@@ -91,7 +91,7 @@ public partial class Demo : ComponentBase
     {
         clipboardTooltipTitle = "Copied!";
         clipboardTooltipIconName = IconName.Check2;
-        clipboardTooltipIconColor = IconColor.Success;
+        clipboardTooltipIconColor = BsColor.Success;
 
         StateHasChanged();
     }
@@ -104,7 +104,7 @@ public partial class Demo : ComponentBase
     {
         clipboardTooltipTitle = "Copy to clipboard";
         clipboardTooltipIconName = IconName.Clipboard;
-        clipboardTooltipIconColor = IconColor.Dark;
+        clipboardTooltipIconColor = BsColor.Dark;
 
         StateHasChanged();
     }

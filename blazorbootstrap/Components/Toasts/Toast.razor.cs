@@ -104,47 +104,20 @@ public partial class Toast : BlazorBootstrapComponentBase
     /// </summary>
     public ValueTask ShowAsync() => JsRuntime.InvokeVoidAsync("window.blazorBootstrap.toasts.show", Id, AutoHide, Delay, objRef);
 
-    private string GetIconClass() =>
-        ToastMessage.Type switch
-        {
-            ToastType.Primary => TextColor.Primary.ToTextColorClass(),
-            ToastType.Secondary => TextColor.Secondary.ToTextColorClass(),
-            ToastType.Success => TextColor.Success.ToTextColorClass(),
-            ToastType.Danger => TextColor.Danger.ToTextColorClass(),
-            ToastType.Warning => TextColor.Warning.ToTextColorClass(),
-            ToastType.Info => TextColor.Info.ToTextColorClass(),
-            ToastType.Light => TextColor.Light.ToTextColorClass(),
-            ToastType.Dark => TextColor.Dark.ToTextColorClass(),
-            _ => ""
-        };
-
-    private ProgressColor GetProgressColor() =>
-        ToastMessage.Type switch
-        {
-            ToastType.Primary => ProgressColor.Primary,
-            ToastType.Secondary => ProgressColor.Secondary,
-            ToastType.Success => ProgressColor.Success,
-            ToastType.Danger => ProgressColor.Danger,
-            ToastType.Warning => ProgressColor.Warning,
-            ToastType.Info => ProgressColor.Info,
-            ToastType.Dark => ProgressColor.Dark,
-            _ => ProgressColor.Primary
-        };
-
-    private IconName GetToastIconName() =>
+ private IconName GetToastIconName() =>
         string.IsNullOrWhiteSpace(ToastMessage.CustomIconName)
         && ToastMessage.IconName != IconName.None
             ? ToastMessage.IconName
             : ToastMessage.Type switch
               {
-                  ToastType.Primary => IconName.LightbulbFill,
-                  ToastType.Secondary => IconName.ExclamationTriangleFill,
-                  ToastType.Success => IconName.CheckCircleFill,
-                  ToastType.Danger => IconName.Fire,
-                  ToastType.Warning => IconName.ExclamationTriangleFill,
-                  ToastType.Info => IconName.InfoCircleFill,
-                  ToastType.Light => IconName.ExclamationTriangleFill,
-                  ToastType.Dark => IconName.ExclamationTriangleFill,
+                  BsColor.Primary => IconName.LightbulbFill,
+                  BsColor.Secondary => IconName.ExclamationTriangleFill,
+                  BsColor.Success => IconName.CheckCircleFill,
+                  BsColor.Danger => IconName.Fire,
+                  BsColor.Warning => IconName.ExclamationTriangleFill,
+                  BsColor.Info => IconName.InfoCircleFill,
+                  BsColor.Light => IconName.ExclamationTriangleFill,
+                  BsColor.Dark => IconName.ExclamationTriangleFill,
                   _ => IconName.BellFill
               };
 
@@ -188,7 +161,7 @@ public partial class Toast : BlazorBootstrapComponentBase
     protected override string? ClassNames =>
         BuildClassNames(Class,
             (BootstrapClass.Toast, true),
-            (BackgroundColor.White.ToBackgroundClass(), true));
+            (BsColor.White.ToBackgroundColorClass(), true));
 
     /// <summary>
     /// Gets or sets the auto hide state.
@@ -220,11 +193,9 @@ public partial class Toast : BlazorBootstrapComponentBase
     [Parameter]
     public EventCallback<ToastEventArgs> Hiding { get; set; }
 
-    private string IconClass => $"{GetIconClass()} me-2".Trim();
+    private string IconClass => $"{ToastMessage.Type.ToTextColorClass()} me-2".Trim();
 
-    private IconName IconName => GetToastIconName();
-
-    private ProgressColor ProgressColor => GetProgressColor();
+    private IconName IconName => GetToastIconName(); 
 
     /// <summary>
     /// If <see langword="true" />, shows the close button.

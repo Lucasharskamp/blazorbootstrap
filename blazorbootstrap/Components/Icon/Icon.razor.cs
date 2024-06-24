@@ -17,16 +17,16 @@ public partial class Icon : BlazorBootstrapComponentBase
             (BootstrapIconUtility.Icon(Name), string.IsNullOrWhiteSpace(CustomIconName)),
             (CustomIconName!, !string.IsNullOrWhiteSpace(CustomIconName)),
             (BootstrapIconUtility.IconSize(Size)!, Size != IconSize.None),
-            (Color.ToIconColorClass(), Color != IconColor.None));
+            (Color.ToTextColorClass(), Color != BsColor.Transparent));
 
     /// <summary>
     /// Gets or sets the icon color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="IconColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public IconColor Color { get; set; } = IconColor.None;
+    public BsColor Color { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets the custom icon name.
@@ -70,7 +70,7 @@ public partial class Icon : BlazorBootstrapComponentBase
             switch (parameter.Name)
             {
                 case nameof(Class): Class = (string)parameter.Value!; break;
-                case nameof(Color): Color = (IconColor)parameter.Value; break;
+                case nameof(Color): Color = (BsColor)parameter.Value; break;
                 case nameof(CustomIconName): CustomIconName = (string)parameter.Value; break;
                 case nameof(Id): Id = (string)parameter.Value!; break;
                 case nameof(Name): Name = (IconName)parameter.Value; break;

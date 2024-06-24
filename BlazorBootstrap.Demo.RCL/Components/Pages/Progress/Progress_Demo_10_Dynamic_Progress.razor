@@ -3,15 +3,15 @@
     <ProgressBar Width="@width" Label="@label" Type="progressType" Color="progressColor" />
 </Progress>
 
-<Button Type="ButtonType.Button" Color="ButtonColor.Primary" Size="ButtonSize.Small" @onclick="IncreaseProgressBar">Increase by 10%</Button>
-<Button Type="ButtonType.Button" Color="ButtonColor.Primary" Size="ButtonSize.Small" @onclick="DecreaseProgressBar">Decrease by 10%</Button>
-<Button Type="ButtonType.Button" Color="ButtonColor.Primary" Size="ButtonSize.Small" @onclick="ResetProgressBar">Reset</Button>
+<Button Type="ButtonType.Button" Color="BsColor.Primary" Size="ButtonSize.Small" @onclick="IncreaseProgressBar">Increase by 10%</Button>
+<Button Type="ButtonType.Button" Color="BsColor.Primary" Size="ButtonSize.Small" @onclick="DecreaseProgressBar">Decrease by 10%</Button>
+<Button Type="ButtonType.Button" Color="BsColor.Primary" Size="ButtonSize.Small" @onclick="ResetProgressBar">Reset</Button>
 
 @code {
     private double width = 10;
     private string label = "10%";
     private ProgressType progressType = ProgressType.StripedAndAnimated;
-    private ProgressColor progressColor = ProgressColor.Secondary;
+    private BsColor progressColor = BsColor.Secondary;
 
     private void IncreaseProgressBar()
     {
@@ -44,35 +44,35 @@
             width = w;
             label = $"{width.ToString(CultureInfo.InvariantCulture)}%";
             progressType = ProgressType.Striped;
-            progressColor = ProgressColor.Success;
+            progressColor = BsColor.Success;
         }
         else if (w > 66 && w < 100)
         {
             width = w;
             label = $"{width.ToString(CultureInfo.InvariantCulture)}%";
             progressType = ProgressType.StripedAndAnimated;
-            progressColor = ProgressColor.Success;
+            progressColor = BsColor.Success;
         }
         else if (w <= 66 && w > 33)
         {
             width = w;
             label = $"{width.ToString(CultureInfo.InvariantCulture)}%";
             progressType = ProgressType.StripedAndAnimated;
-            progressColor = ProgressColor.Warning;
+            progressColor = BsColor.Warning;
         }
         else if (w <= 33 && w > 0)
         {
             width = w;
             label = $"{width.ToString(CultureInfo.InvariantCulture)}%";
             progressType = ProgressType.StripedAndAnimated;
-            progressColor = ProgressColor.Secondary;
+            progressColor = BsColor.Secondary;
         }
         else if(w == 0)
         {
             width = w;
             label = $"{width.ToString(CultureInfo.InvariantCulture)}%";
             progressType = ProgressType.Striped;
-            progressColor = ProgressColor.Danger;
+            progressColor = BsColor.Danger;
         }
     }
 }

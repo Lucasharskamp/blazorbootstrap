@@ -158,7 +158,7 @@ public partial class GridColumnFilter : BlazorBootstrapComponentBase
             {
                 case nameof(Class): Class = (string)parameter.Value!; break;
                 case nameof(GridColumnFilterChanged): GridColumnFilterChanged = (EventCallback<FilterEventArgs>)parameter.Value!; break;
-                case nameof(FilterButtonColor): FilterButtonColor = (ButtonColor)parameter.Value!; break;
+                case nameof(FilterButtonColor): FilterButtonColor = (BsColor)parameter.Value!; break;
                 case nameof(FilterButtonCssClass): FilterButtonCssClass = (string)parameter.Value!; break;
                 case nameof(FilterOperator): FilterOperator = (FilterOperator)parameter.Value!; break;
                 case nameof(FiltersTranslationProvider): FiltersTranslationProvider = (GridFiltersTranslationDelegate)parameter.Value!; break;
@@ -188,10 +188,10 @@ public partial class GridColumnFilter : BlazorBootstrapComponentBase
     /// Gets or sets the filter button color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="ButtonColor.Light" />.
+    /// Default value is <see cref="BsColor.Light" />.
     /// </remarks>
     [Parameter]
-    public ButtonColor FilterButtonColor { get; set; } = ButtonColor.Light;
+    public BsColor FilterButtonColor { get; set; } = BsColor.Light;
 
     /// <summary>
     /// Gets or sets the filter button CSS class.

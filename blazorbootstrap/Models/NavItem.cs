@@ -32,7 +32,7 @@ public class NavItem
     /// <summary>
     /// Gets or sets the icon color.
     /// </summary>
-    public IconColor IconColor { get; set; }
+    public BsColor IconColor { get; set; }
 
     /// <summary>
     /// Gets or sets the icon name.

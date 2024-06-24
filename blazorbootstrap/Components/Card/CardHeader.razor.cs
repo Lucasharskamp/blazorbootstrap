@@ -12,7 +12,7 @@ public partial class CardHeader : BlazorBootstrapComponentBase
     protected override string? ClassNames =>
         BuildClassNames(Class,
             (BootstrapClass.CardHeader, true),
-            (Color.ToCardColorClass(), true));
+            (Color.ToTextColorClass(), true));
 
     /// <summary>
     /// Gets or sets the content to be rendered within the component.
@@ -24,10 +24,10 @@ public partial class CardHeader : BlazorBootstrapComponentBase
     /// Gets or sets the card header color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="CardColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public CardColor Color { get; set; } = CardColor.None;
+    public BsColor Color { get; set; } = BsColor.Transparent;
 
     #endregion
 
@@ -45,7 +45,7 @@ public partial class CardHeader : BlazorBootstrapComponentBase
             {
                 case nameof(Class): Class = (string)parameter.Value; break;
                 case nameof(ChildContent): ChildContent = (RenderFragment)parameter.Value; break;
-                case nameof(Color): Color = (CardColor)parameter.Value; break;
+                case nameof(Color): Color = (BsColor)parameter.Value; break;
                 case nameof(Id): Id = (string)parameter.Value; break;
                 case nameof(Style): Style = (string)parameter.Value; break;
                 default:

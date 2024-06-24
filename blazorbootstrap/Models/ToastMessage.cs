@@ -9,14 +9,14 @@ public class ToastMessage : IEquatable<ToastMessage>
         Id = Guid.NewGuid();
     }
 
-    public ToastMessage(ToastType type, string message)
+    public ToastMessage(BsColor type, string message)
     {
         Id = Guid.NewGuid();
         Type = type;
         Message = message;
     }
 
-    public ToastMessage(ToastType type, string title, string message)
+    public ToastMessage(BsColor type, string title, string message)
     {
         Id = Guid.NewGuid();
         Type = type;
@@ -24,7 +24,7 @@ public class ToastMessage : IEquatable<ToastMessage>
         Message = message;
     }
 
-    public ToastMessage(ToastType type, IconName iconName, string title, string message)
+    public ToastMessage(BsColor type, IconName iconName, string title, string message)
     {
         Id = Guid.NewGuid();
         Type = type;
@@ -33,7 +33,7 @@ public class ToastMessage : IEquatable<ToastMessage>
         Message = message;
     }
 
-    public ToastMessage(ToastType type, string customIconName, string title, string message)
+    public ToastMessage(BsColor type, string customIconName, string title, string message)
     {
         Id = Guid.NewGuid();
         Type = type;
@@ -42,7 +42,7 @@ public class ToastMessage : IEquatable<ToastMessage>
         Message = message;
     }
 
-    public ToastMessage(ToastType type, IconName iconName, string title, string helpText, string message)
+    public ToastMessage(BsColor type, IconName iconName, string title, string helpText, string message)
     {
         Id = Guid.NewGuid();
         Type = type;
@@ -52,7 +52,7 @@ public class ToastMessage : IEquatable<ToastMessage>
         Message = message;
     }
 
-    public ToastMessage(ToastType type, string customIconName, string title, string helpText, string message)
+    public ToastMessage(BsColor type, string customIconName, string title, string helpText, string message)
     {
         Id = Guid.NewGuid();
         Type = type;
@@ -62,7 +62,7 @@ public class ToastMessage : IEquatable<ToastMessage>
         Message = message;
     }
 
-    public ToastMessage(ToastType type, string customIconName, string title, string helpText, string message, bool autoHide)
+    public ToastMessage(BsColor type, string customIconName, string title, string helpText, string message, bool autoHide)
     {
         Id = Guid.NewGuid();
         Type = type;
@@ -104,7 +104,7 @@ public class ToastMessage : IEquatable<ToastMessage>
 
     public string? Title { get; set; }
 
-    public ToastType Type { get; set; }
+    public BsColor Type { get; set; }
 
     #endregion
 }

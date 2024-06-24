@@ -1,7 +1,7 @@
-﻿<Button Color="ButtonColor.Primary" @onclick="() => ShowModal(ModalSize.Regular)">Show Regular Modal</Button>
-<Button Color="ButtonColor.Secondary" @onclick="() => ShowModal(ModalSize.Small)">Show Small Modal</Button>
-<Button Color="ButtonColor.Success" @onclick="() => ShowModal(ModalSize.Large)">Show Large Modal</Button>
-<Button Color="ButtonColor.Danger" @onclick="() => ShowModal(ModalSize.ExtraLarge)">Show ExtraLarge Modal</Button>
+﻿<Button Color="BsColor.Primary" @onclick="() => ShowModal(ModalSize.Regular)">Show Regular Modal</Button>
+<Button Color="BsColor.Secondary" @onclick="() => ShowModal(ModalSize.Small)">Show Small Modal</Button>
+<Button Color="BsColor.Success" @onclick="() => ShowModal(ModalSize.Large)">Show Large Modal</Button>
+<Button Color="BsColor.Danger" @onclick="() => ShowModal(ModalSize.ExtraLarge)">Show ExtraLarge Modal</Button>
 
 @code {
     [Inject] ModalService ModalService { get; set; } = default!;

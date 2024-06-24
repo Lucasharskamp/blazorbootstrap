@@ -8,13 +8,13 @@
         {
             // TODO: call the service/api to save the employee details
 
-            ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+            ToastService.Notify(new(BsColor.Success, $"Employee details saved successfully."));
         }
         catch(Exception ex)
         {
             // handle exception
 
-            ToastService.Notify(new(ToastType.Danger, $"Error: {ex.Message}."));
+            ToastService.Notify(new(BsColor.Danger, $"Error: {ex.Message}."));
         }
     }
 }

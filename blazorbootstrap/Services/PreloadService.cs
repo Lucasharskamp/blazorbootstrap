@@ -5,7 +5,7 @@ public class PreloadService
     #region Events
 
     internal event Action OnHide = default!;
-    internal event Action<SpinnerColor, string?> OnShow = default!;
+    internal event Action<BsColor, string?> OnShow = default!;
 
     #endregion
 
@@ -13,7 +13,7 @@ public class PreloadService
 
     public void Hide() => OnHide?.Invoke();
 
-    public void Show(SpinnerColor spinnerColor = SpinnerColor.Light, string? loadingText = null) => OnShow?.Invoke(spinnerColor, loadingText);
+    public void Show(BsColor spinnerColor = BsColor.Light, string? loadingText = null) => OnShow?.Invoke(spinnerColor, loadingText);
 
     #endregion
 }

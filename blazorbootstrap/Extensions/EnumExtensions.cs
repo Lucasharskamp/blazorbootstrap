@@ -9,20 +9,30 @@ public static class EnumExtensions
 {
     #region Methods
 
-    public static string ToAlertColorClass(this AlertColor alertColor) =>
+    /// <summary>
+    /// Turns the <see cref="BsColor"/> into an HTML Bootstrap alert color class name.
+    /// </summary>
+    /// <param name="alertColor">Alert Color to convert</param>
+    /// <returns>CSS class name for use in HTML elements.</returns>
+    public static string ToAlertColorClass(this BsColor alertColor) =>
         alertColor switch
         {
-            AlertColor.Primary => "alert-primary",
-            AlertColor.Secondary => "alert-secondary",
-            AlertColor.Success => "alert-success",
-            AlertColor.Danger => "alert-danger",
-            AlertColor.Warning => "alert-warning",
-            AlertColor.Info => "alert-info",
-            AlertColor.Light => "alert-light",
-            AlertColor.Dark => "alert-dark",
+            BsColor.Primary => "alert-primary",
+            BsColor.Secondary => "alert-secondary",
+            BsColor.Success => "alert-success",
+            BsColor.Danger => "alert-danger",
+            BsColor.Warning => "alert-warning",
+            BsColor.Info => "alert-info",
+            BsColor.Light => "alert-light",
+            BsColor.Dark => "alert-dark",
             _ => ""
         };
 
+    /// <summary>
+    /// Turns the <see cref="AutoCompleteSize"/> into an HTML Bootstrap CSS class name.
+    /// </summary>
+    /// <param name="autoCompleteSize">Auto complete size to convert</param>
+    /// <returns>CSS class name for use in HTML elements.</returns>
     public static string ToAutoCompleteSizeClass(this AutoCompleteSize autoCompleteSize) =>
         autoCompleteSize switch
         {
@@ -31,51 +41,60 @@ public static class EnumExtensions
             _ => ""
         };
 
-    public static string ToBackgroundAndTextClass(this BackgroundColor backgroundColor) =>
+    /// <summary>
+    /// Converts the <see cref="BsColor"/> of <paramref name="backgroundColor"/> into an HTML Bootstrap CSS class name with text colors for those backgrounds.
+    /// </summary>
+    /// <param name="backgroundColor">Background color to convert, and assigns text colors for those backgrounds as well.</param>
+    /// <returns>CSS class name for use in HTML elements.</returns>
+    public static string ToBackgroundAndTextClass(this BsColor backgroundColor) =>
         backgroundColor switch
         {
-            BackgroundColor.Primary => "bg-primary text-white",
-            BackgroundColor.Secondary => "bg-secondary text-white",
-            BackgroundColor.Success => "bg-success text-white",
-            BackgroundColor.Danger => "bg-danger text-white",
-            BackgroundColor.Warning => "bg-warning text-dark",
-            BackgroundColor.Info => "bg-info text-dark",
-            BackgroundColor.Light => "bg-light text-dark",
-            BackgroundColor.Dark => "bg-dark text-white",
-            BackgroundColor.Body => "bg-body text-dark",
-            BackgroundColor.White => "bg-white text-dark",
-            BackgroundColor.Transparent => "bg-transparent text-dark",
+            BsColor.Primary => "bg-primary text-white",
+            BsColor.Secondary => "bg-secondary text-white",
+            BsColor.Success => "bg-success text-white",
+            BsColor.Danger => "bg-danger text-white",
+            BsColor.Warning => "bg-warning text-dark",
+            BsColor.Info => "bg-info text-dark",
+            BsColor.Light => "bg-light text-dark",
+            BsColor.Dark => "bg-dark text-white",
+            BsColor.Body => "bg-body text-dark",
+            BsColor.White => "bg-white text-dark",
+            BsColor.Transparent => "bg-transparent text-dark",
             _ => ""
         };
 
-    public static string ToBackgroundClass(this BackgroundColor backgroundColor) =>
+    public static string ToBackgroundColorClass(this BsColor backgroundColor) =>
         backgroundColor switch
         {
-            BackgroundColor.Primary => "bg-primary",
-            BackgroundColor.Secondary => "bg-secondary",
-            BackgroundColor.Success => "bg-success",
-            BackgroundColor.Danger => "bg-danger",
-            BackgroundColor.Warning => "bg-warning",
-            BackgroundColor.Info => "bg-info",
-            BackgroundColor.Light => "bg-light",
-            BackgroundColor.Dark => "bg-dark",
-            BackgroundColor.Body => "bg-body",
-            BackgroundColor.White => "bg-white",
-            BackgroundColor.Transparent => "bg-transparent",
+            BsColor.Primary => "bg-primary",
+            BsColor.Secondary => "bg-secondary",
+            BsColor.Success => "bg-success",
+            BsColor.Danger => "bg-danger",
+            BsColor.Warning => "bg-warning",
+            BsColor.Info => "bg-info",
+            BsColor.Light => "bg-light",
+            BsColor.Dark => "bg-dark",
+            BsColor.Body => "bg-body",
+            BsColor.White => "bg-white",
+            BsColor.Transparent => "bg-transparent",
             _ => ""
         };
 
-    public static string ToBadgeColorClass(this BadgeColor badgeColor) =>
+    public static string ToTextColorClass(this BsColor badgeColor) =>
         badgeColor switch
         {
-            BadgeColor.Primary => "text-bg-primary",
-            BadgeColor.Secondary => "text-bg-secondary",
-            BadgeColor.Success => "text-bg-success",
-            BadgeColor.Danger => "text-bg-danger",
-            BadgeColor.Warning => "text-bg-warning",
-            BadgeColor.Info => "text-bg-info",
-            BadgeColor.Light => "text-bg-light",
-            BadgeColor.Dark => "text-bg-dark",
+            BsColor.Primary => "text-bg-primary",
+            BsColor.Secondary => "text-bg-secondary",
+            BsColor.Success => "text-bg-success",
+            BsColor.Danger => "text-bg-danger",
+            BsColor.Warning => "text-bg-warning",
+            BsColor.Info => "text-bg-info",
+            BsColor.Light => "text-bg-light",
+            BsColor.Dark => "text-bg-dark",
+            BsColor.Body => "text-bg-body",
+            BsColor.Black => "text-bg-black",
+            BsColor.White => "text-bg-white",
+            BsColor.Transparent => "text-bg-transparent",
             _ => ""
         };
 
@@ -105,50 +124,50 @@ public static class EnumExtensions
     /// <summary>
     /// Returns the Bootstrap CSS Class for a specific button color.
     /// </summary>
-    /// <param name="buttonColor">Button color to retrieve the class from</param>
+    /// <param name="bsColor">Button color to retrieve the class from</param>
     /// <returns>Button color</returns>
-    public static string ToButtonColorClass(this ButtonColor buttonColor) =>
-        buttonColor switch
+    public static string ToButtonColorClass(this BsColor bsColor) =>
+        bsColor switch
         {
-            ButtonColor.Primary => "btn-primary",
-            ButtonColor.Secondary => "btn-secondary",
-            ButtonColor.Success => "btn-success",
-            ButtonColor.Danger => "btn-danger",
-            ButtonColor.Warning => "btn-warning",
-            ButtonColor.Info => "btn-info",
-            ButtonColor.Light => "btn-light",
-            ButtonColor.Dark => "btn-dark",
-            ButtonColor.Link => "btn-link",
+            BsColor.Primary => "btn-primary",
+            BsColor.Secondary => "btn-secondary",
+            BsColor.Success => "btn-success",
+            BsColor.Danger => "btn-danger",
+            BsColor.Warning => "btn-warning",
+            BsColor.Info => "btn-info",
+            BsColor.Light => "btn-light",
+            BsColor.Dark => "btn-dark",
+            BsColor.Link => "btn-link",
             _ => ""
         };
 
-    public static string ToDropdownButtonColorClass(this DropdownColor dropdownColor) =>
-        dropdownColor switch
+    public static string ToDropdownBsColorClass(this BsColor BsColor) =>
+        BsColor switch
         {
-            DropdownColor.Primary => "btn-primary",
-            DropdownColor.Secondary => "btn-secondary",
-            DropdownColor.Success => "btn-success",
-            DropdownColor.Danger => "btn-danger",
-            DropdownColor.Warning => "btn-warning",
-            DropdownColor.Info => "btn-info",
-            DropdownColor.Light => "btn-light",
-            DropdownColor.Dark => "btn-dark",
-            DropdownColor.Link => "btn-link",
+            BsColor.Primary => "btn-primary",
+            BsColor.Secondary => "btn-secondary",
+            BsColor.Success => "btn-success",
+            BsColor.Danger => "btn-danger",
+            BsColor.Warning => "btn-warning",
+            BsColor.Info => "btn-info",
+            BsColor.Light => "btn-light",
+            BsColor.Dark => "btn-dark",
+            BsColor.Link => "btn-link",
             _ => ""
         };
 
-    public static string ToButtonOutlineColorClass(this ButtonColor buttonColor) =>
-        buttonColor switch
+    public static string ToButtonOutlineColorClass(this BsColor BsColor) =>
+        BsColor switch
         {
-            ButtonColor.Primary => "btn-outline-primary",
-            ButtonColor.Secondary => "btn-outline-secondary",
-            ButtonColor.Success => "btn-outline-success",
-            ButtonColor.Danger => "btn-outline-danger",
-            ButtonColor.Warning => "btn-outline-warning",
-            ButtonColor.Info => "btn-outline-info",
-            ButtonColor.Light => "btn-outline-light",
-            ButtonColor.Dark => "btn-outline-dark",
-            ButtonColor.Link => "btn-outline-link",
+            BsColor.Primary => "btn-outline-primary",
+            BsColor.Secondary => "btn-outline-secondary",
+            BsColor.Success => "btn-outline-success",
+            BsColor.Danger => "btn-outline-danger",
+            BsColor.Warning => "btn-outline-warning",
+            BsColor.Info => "btn-outline-info",
+            BsColor.Light => "btn-outline-light",
+            BsColor.Dark => "btn-outline-dark",
+            BsColor.Link => "btn-outline-link",
             _ => ""
         };
 
@@ -183,28 +202,18 @@ public static class EnumExtensions
             _ => ""
         };
 
-    public static string ToCalloutColorClass(this CalloutColor calloutColor) =>
-        calloutColor switch
+    public static string ToCalloutColorClass(this BsColor bsColor) =>
+        bsColor switch
         {
-            CalloutColor.Default => "",
-            CalloutColor.Danger => $"bb-callout-danger",
-            CalloutColor.Warning => $"bb-callout-warning",
-            CalloutColor.Info => $"bb-callout-info",
-            CalloutColor.Success => $"bb-callout-success",
-            _ => ""
-        };
-
-    public static string ToCardColorClass(this CardColor cardColor) =>
-        cardColor switch
-        {
-            CardColor.Primary => "text-bg-primary",
-            CardColor.Secondary => "text-bg-secondary",
-            CardColor.Success => "text-bg-success",
-            CardColor.Danger => "text-bg-danger",
-            CardColor.Warning => "text-bg-warning",
-            CardColor.Info => "text-bg-info",
-            CardColor.Light => "text-bg-light",
-            CardColor.Dark => "text-bg-dark",
+            BsColor.Default => "",
+            BsColor.Danger => $"bb-callout-danger",
+            BsColor.Warning => $"bb-callout-warning",
+            BsColor.Info => $"bb-callout-info",
+            BsColor.Success => $"bb-callout-success",
+            BsColor.Primary => $"bb-callout-primary",
+            BsColor.Secondary => $"bb-callout-secondary",
+            BsColor.Light => $"bb-callout-light",
+            BsColor.Dark => $"bb-callout-dark",
             _ => ""
         };
 
@@ -260,23 +269,7 @@ public static class EnumExtensions
             DropdownSize.Large => "btn-lg",
             _ => ""
         };
-
-    public static string ToIconColorClass(this IconColor iconColor) =>
-        iconColor switch
-        {
-            IconColor.Primary => "text-primary",
-            IconColor.Secondary => "text-secondary",
-            IconColor.Success => "text-success",
-            IconColor.Danger => "text-danger",
-            IconColor.Warning => "text-warning",
-            IconColor.Info => "text-info",
-            IconColor.Light => "text-light",
-            IconColor.Dark => "text-dark",
-            IconColor.Body => "text-body",
-            IconColor.Muted => "text-muted",
-            IconColor.White => "text-white",
-            _ => ""
-        };
+    
 
     public static string ToModalFullscreenClass(this ModalFullscreen modalFullscreen) =>
         modalFullscreen switch
@@ -358,20 +351,6 @@ public static class EnumExtensions
             _ => ""
         };
 
-    public static string ToPlaceholderColorClass(this PlaceholderColor placeholderColor) =>
-        placeholderColor switch
-        {
-            PlaceholderColor.Primary => "bg-primary",
-            PlaceholderColor.Secondary => "bg-secondary",
-            PlaceholderColor.Success => "bg-success",
-            PlaceholderColor.Danger => "bg-danger",
-            PlaceholderColor.Warning => "bg-warning",
-            PlaceholderColor.Info => "bg-info",
-            PlaceholderColor.Light => "bg-light",
-            PlaceholderColor.Dark => "bg-dark",
-            _ => ""
-        };
-
     public static string ToPlaceholderSizeClass(this PlaceholderSize placeholderSize) =>
         placeholderSize switch
         {
@@ -410,19 +389,6 @@ public static class EnumExtensions
             _ => ""
         };
 
-    public static string ToProgressColorClass(this ProgressColor progressColor) =>
-        progressColor switch
-        {
-            ProgressColor.Primary => "bg-primary",
-            ProgressColor.Secondary => "bg-secondary",
-            ProgressColor.Success => "bg-success",
-            ProgressColor.Danger => "bg-danger",
-            ProgressColor.Warning => "bg-warning",
-            ProgressColor.Info => "bg-info",
-            ProgressColor.Dark => "bg-dark",
-            _ => ""
-        };
-
     public static object ToSortableListPullMode(this SortableListPullMode sortableListPullMode) =>
         sortableListPullMode switch
         {
@@ -435,21 +401,7 @@ public static class EnumExtensions
 
     public static object ToSortableListPutMode(this SortableListPutMode sortableListPutMode) =>
         sortableListPutMode == SortableListPutMode.True;
-
-    public static string ToSpinnerColorClass(this SpinnerColor spinnerColor) =>
-        spinnerColor switch
-        {
-            SpinnerColor.Primary => "text-primary",
-            SpinnerColor.Secondary => "text-secondary",
-            SpinnerColor.Success => "text-success",
-            SpinnerColor.Danger => "text-danger",
-            SpinnerColor.Warning => "text-warning",
-            SpinnerColor.Info => "text-info",
-            SpinnerColor.Light => "text-light",
-            SpinnerColor.Dark => "text-dark",
-            _ => ""
-        };
-
+     
     public static string ToSpinnerSizeClass(this SpinnerSize spinnerSize) =>
         spinnerSize switch
         {
@@ -487,35 +439,19 @@ public static class EnumExtensions
             BlazorBootstrap.Alignment.End => "text-end",
             _ => ""
         };
+     
 
-    public static string ToTextColorClass(this TextColor textColor) =>
-        textColor switch
+    public static string? ToTooltipColorClass(this BsColor BsColor) =>
+        BsColor switch
         {
-            TextColor.Primary => "text-primary",
-            TextColor.Secondary => "text-secondary",
-            TextColor.Success => "text-success",
-            TextColor.Danger => "text-danger",
-            TextColor.Warning => "text-warning",
-            TextColor.Info => "text-info",
-            TextColor.Light => "text-light",
-            TextColor.Dark => "text-dark",
-            TextColor.Body => "text-body",
-            TextColor.Muted => "text-muted",
-            TextColor.White => "text-white",
-            _ => ""
-        };
-
-    public static string? ToTooltipColorClass(this TooltipColor tooltipColor) =>
-        tooltipColor switch
-        {
-            TooltipColor.Primary => "bb-tooltip-primary",
-            TooltipColor.Secondary => "bb-tooltip-tooltip-secondary",
-            TooltipColor.Success => "bb-tooltip-success",
-            TooltipColor.Danger => "bb-tooltip-danger",
-            TooltipColor.Warning => "bb-tooltip-warning",
-            TooltipColor.Info => "bb-tooltip-info",
-            TooltipColor.Light => "bb-tooltip-light",
-            TooltipColor.Dark => "bb-tooltip-dark",
+            BsColor.Primary => "bb-tooltip-primary",
+            BsColor.Secondary => "bb-tooltip-tooltip-secondary",
+            BsColor.Success => "bb-tooltip-success",
+            BsColor.Danger => "bb-tooltip-danger",
+            BsColor.Warning => "bb-tooltip-warning",
+            BsColor.Info => "bb-tooltip-info",
+            BsColor.Light => "bb-tooltip-light",
+            BsColor.Dark => "bb-tooltip-dark",
             _ => null
         };
 
@@ -527,20 +463,6 @@ public static class EnumExtensions
             TooltipPlacement.Bottom => "bottom",
             TooltipPlacement.Left => "left",
             _ => "top"
-        };
-
-    public static string ToToastBackgroundColorClass(this ToastType toastType) =>
-        toastType switch
-        {
-            ToastType.Primary => "bg-primary",
-            ToastType.Secondary => "bg-secondary",
-            ToastType.Success => "bg-success",
-            ToastType.Danger => "bg-danger",
-            ToastType.Warning => "bg-warning",
-            ToastType.Info => "bg-info",
-            ToastType.Light => "bg-light",
-            ToastType.Dark => "bg-dark",
-            _ => ""
         };
 
     public static string ToToastsPlacementClass(this ToastsPlacement toastsPlacement) =>
@@ -558,17 +480,17 @@ public static class EnumExtensions
             _ => "top-0 end-0" // default: Top right
         };
 
-    public static string ToToastTextColorClass(this ToastType toastType) =>
-        toastType switch
+    public static string ToToastTextColorClass(this BsColor BsColor) =>
+        BsColor switch
         {
-            ToastType.Primary
-                or ToastType.Secondary
-                or ToastType.Success
-                or ToastType.Danger
-                or ToastType.Dark => "text-white",
-            ToastType.Warning
-                or ToastType.Info
-                or ToastType.Light => "text-dark",
+            BsColor.Primary
+                or BsColor.Secondary
+                or BsColor.Success
+                or BsColor.Danger
+                or BsColor.Dark => "text-white",
+            BsColor.Warning
+                or BsColor.Info
+                or BsColor.Light => "text-dark",
             _ => ""
         };
 

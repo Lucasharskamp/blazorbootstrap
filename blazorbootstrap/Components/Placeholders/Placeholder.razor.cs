@@ -20,7 +20,7 @@ public partial class Placeholder : BlazorBootstrapComponentBase
             switch (parameter.Name)
             {
                 case nameof(Class): Class = (string)parameter.Value!; break;
-                case nameof(Color): Color = (PlaceholderColor)parameter.Value; break;
+                case nameof(Color): Color = (BsColor)parameter.Value; break;
                 case nameof(Id): Id = (string)parameter.Value!; break;
                 case nameof(Size): Size = (PlaceholderSize)parameter.Value; break;
                 case nameof(Style): Style = (string)parameter.Value!; break;
@@ -45,17 +45,17 @@ public partial class Placeholder : BlazorBootstrapComponentBase
         BuildClassNames(Class,
             (BootstrapClass.Placeholder, true),
             (Width.ToPlaceholderWidthClass(), true),
-            (Color.ToPlaceholderColorClass(), Color != PlaceholderColor.None),
+            (Color.ToBackgroundColorClass(), Color != BsColor.Transparent),
             (Size.ToPlaceholderSizeClass(), Size != PlaceholderSize.None));
 
     /// <summary>
     /// Gets or sets the placeholder color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="PlaceholderColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public PlaceholderColor Color { get; set; } = PlaceholderColor.None;
+    public BsColor Color { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets the placeholder size.

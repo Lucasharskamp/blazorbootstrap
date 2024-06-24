@@ -42,8 +42,8 @@
 
     <div class="row">
         <div class="col-md-12 text-right">
-            <Button Type="ButtonType.Button" Color="ButtonColor.Secondary" Class="float-end" @onclick="ResetForm">Reset</Button>
-            <Button Type="ButtonType.Submit" Color="ButtonColor.Success" Class="float-end me-2" Disabled="disableSave">Save</Button>
+            <Button Type="ButtonType.Button" Color="BsColor.Secondary" Class="float-end" @onclick="ResetForm">Reset</Button>
+            <Button Type="ButtonType.Submit" Color="BsColor.Success" Class="float-end me-2" Disabled="disableSave">Save</Button>
         </div>
     </div>
 </EditForm>
@@ -73,7 +73,7 @@
                 Title = "Save Employee Details",
                 Message = $"Employee details saved successfully.",
                 AutoHide = true,
-                Type = ToastType.Success,
+                Type = BsColor.Success,
                 IconName = IconName.CheckCircleFill,
             };
 
@@ -89,7 +89,7 @@
                 Title = "Field Changed Notification",
                 Message = $"The field \"{e.FieldIdentifier.FieldName}\" was changed.",
                 AutoHide = true,
-                Type = ToastType.Info
+                Type = BsColor.Info
             };
 
         ToastService.Notify(toastMessage);

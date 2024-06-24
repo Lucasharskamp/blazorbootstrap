@@ -3,12 +3,12 @@
         Modal body text goes here.
     </BodyTemplate>
     <FooterTemplate>
-        <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
-        <Button Color="ButtonColor.Primary">Save changes</Button>
+        <Button Color="BsColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+        <Button Color="BsColor.Primary">Save changes</Button>
     </FooterTemplate>
 </Modal>
 
-<Button Color="ButtonColor.Primary" @onclick="OnShowModalClick">Show Modal</Button>
+<Button Color="BsColor.Primary" @onclick="OnShowModalClick">Show Modal</Button>
 
 @code {
     private Modal modal = default!;

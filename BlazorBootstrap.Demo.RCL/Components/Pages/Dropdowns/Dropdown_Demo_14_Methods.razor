@@ -1,4 +1,4 @@
-﻿<Dropdown @ref="dropdown1" Color="DropdownColor.Secondary">
+﻿<Dropdown @ref="dropdown1" Color="BsColor.Secondary">
     <DropdownToggleButton>Dropdown button</DropdownToggleButton>
     <DropdownMenu>
         <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
@@ -7,9 +7,9 @@
     </DropdownMenu>
 </Dropdown>
 
-<Button Color="ButtonColor.Primary" @onclick="(async() => await ShowAsync())">Show</Button>
-<Button Color="ButtonColor.Primary" @onclick="(async() => await HideAsync())">Hide</Button>
-<Button Color="ButtonColor.Primary" @onclick="(async() => await ToggleAsync())">Toggle</Button>
+<Button Color="BsColor.Primary" @onclick="(async() => await ShowAsync())">Show</Button>
+<Button Color="BsColor.Primary" @onclick="(async() => await HideAsync())">Hide</Button>
+<Button Color="BsColor.Primary" @onclick="(async() => await ToggleAsync())">Toggle</Button>
 
 @code{
     private Dropdown dropdown1 = default!;

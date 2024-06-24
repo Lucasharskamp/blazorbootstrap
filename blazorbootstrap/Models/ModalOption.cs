@@ -7,7 +7,10 @@ public class ModalOption
     /// <summary>
     /// Gets or sets the footer button color.
     /// </summary>
-    public ButtonColor FooterButtonColor { get; set; } = ButtonColor.Secondary;
+    /// <remarks>
+    /// Default value is <see cref="BsColor.Secondary" />.
+    /// </remarks>
+    public BsColor FooterButtonColor { get; set; } = BsColor.Secondary;
 
     /// <summary>
     /// Gets or sets the footer button custom CSS class.

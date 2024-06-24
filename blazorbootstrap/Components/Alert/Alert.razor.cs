@@ -82,7 +82,7 @@ public partial class Alert : BlazorBootstrapComponentBase
             { 
                 case nameof(ChildContent): ChildContent = (RenderFragment)parameter.Value; break;
                 case nameof(Class): Class = (string)parameter.Value; break;
-                case nameof(Color): Color = (AlertColor)parameter.Value; break;
+                case nameof(Color): Color = (BsColor)parameter.Value; break;
                 case nameof(Dismissable): Dismissable = (bool)parameter.Value; break;
                 case nameof(Id): Id = (string)parameter.Value; break;
                 case nameof(OnClose): OnClose = (EventCallback)parameter.Value; break;
@@ -106,7 +106,7 @@ public partial class Alert : BlazorBootstrapComponentBase
     protected override string? ClassNames =>
         BuildClassNames(Class,
             (BootstrapClass.Alert, true),
-            (Color.ToAlertColorClass(), Color != AlertColor.None),
+            (Color.ToAlertColorClass(), Color != BsColor.Default),
             (BootstrapClass.AlertDismisable, Dismissable));
 
     /// <summary>
@@ -122,10 +122,10 @@ public partial class Alert : BlazorBootstrapComponentBase
     /// Gets or sets the alert color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="AlertColor.None" />.
+    /// Default value is <see cref="BsColor.Default" />.
     /// </remarks>
     [Parameter]
-    public AlertColor Color { get; set; } = AlertColor.None;
+    public BsColor Color { get; set; } = BsColor.Default;
 
     /// <summary>
     /// If <see langword="true" />, shows an inline close button.

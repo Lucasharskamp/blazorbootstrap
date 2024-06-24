@@ -43,9 +43,9 @@ public partial class Preload : BlazorBootstrapComponentBase
         StateHasChanged();
     }
 
-    private void OnShow(SpinnerColor newSpinnerColor, string? newLoadingText)
+    private void OnShow(BsColor newSpinnerColor, string? newLoadingText)
     {
-        this.spinnerColor = newSpinnerColor.ToSpinnerColorClass();
+        this.spinnerColor = newSpinnerColor.ToTextColorClass();
 
         showBackdrop = true;
 

@@ -13,7 +13,7 @@ public partial class Badge : BlazorBootstrapComponentBase
     protected override string? ClassNames =>
         BuildClassNames(Class,
             (BootstrapClass.Badge, true),
-            (Color.ToBadgeColorClass(), Color != BadgeColor.None),
+            (Color.ToTextColorClass(), Color != BsColor.Transparent),
             (IndicatorType.ToBadgeIndicatorClass(), IndicatorType != BadgeIndicatorType.None),
             (Position.ToPositionClass(), Position != Position.None),
             (Placement.ToBadgePlacementClass(), Placement != BadgePlacement.None),
@@ -32,10 +32,10 @@ public partial class Badge : BlazorBootstrapComponentBase
     /// Gets or sets the badge color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="BadgeColor.Secondary" />.
+    /// Default value is <see cref="BsColor.Secondary" />.
     /// </remarks>
     [Parameter]
-    public BadgeColor Color { get; set; } = BadgeColor.Secondary;
+    public BsColor Color { get; set; } = BsColor.Secondary;
 
     /// <summary>
     /// Gets or sets the badge indicator.
@@ -90,7 +90,7 @@ public partial class Badge : BlazorBootstrapComponentBase
             {
                 case nameof(ChildContent): ChildContent = (RenderFragment)parameter.Value; break;
                 case nameof(Class): Class = (string)parameter.Value; break;
-                case nameof(Color): Color = (BadgeColor)parameter.Value; break;
+                case nameof(Color): Color = (BsColor)parameter.Value; break;
                 case nameof(Id): Id = (string)parameter.Value; break;
                 case nameof(IndicatorType): IndicatorType = (BadgeIndicatorType)parameter.Value; break;
                 case nameof(Placement): Placement = (BadgePlacement)parameter.Value; break;

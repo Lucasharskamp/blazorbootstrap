@@ -3,29 +3,29 @@
 <br/>
 <br />
 
-<Button Color="ButtonColor.Primary" @onclick="UpdateTooltipToPrimary">Change Tooltip Color</Button>
-<Button Color="ButtonColor.Success" @onclick="UpdateTooltipToSuccess">Change Tooltip Color</Button>
-<Button Color="ButtonColor.Danger" @onclick="UpdateTooltipToDanger">Change Tooltip Color</Button>
+<Button Color="BsColor.Primary" @onclick="UpdateTooltipToPrimary">Change Tooltip Color</Button>
+<Button Color="BsColor.Success" @onclick="UpdateTooltipToSuccess">Change Tooltip Color</Button>
+<Button Color="BsColor.Danger" @onclick="UpdateTooltipToDanger">Change Tooltip Color</Button>
 
 @code {
     private string? title = "Tooltip Top";
-    private TooltipColor tooltipColor;
+    private BsColor tooltipColor;
 
     private void UpdateTooltipToPrimary()
     {
-        tooltipColor = TooltipColor.Primary;
+        tooltipColor = BsColor.Primary;
         title = "Tooltip Top Primary";
     }
 
     private void UpdateTooltipToSuccess()
     {
-        tooltipColor = TooltipColor.Success;
+        tooltipColor = BsColor.Success;
         title = "Tooltip Top Success";
     }
 
     private void UpdateTooltipToDanger()
     {
-        tooltipColor = TooltipColor.Danger;
+        tooltipColor = BsColor.Danger;
         title = "Tooltip Top Danger";
     }
 }

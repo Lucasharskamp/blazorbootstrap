@@ -29,19 +29,7 @@ public partial class ProgressBar
     public void IncreaseWidth(double width)
     { 
         Width = Math.Clamp(Width + width, 0, 100);
-    }
-
-    /// <summary>
-    /// Set the progress bar color.
-    /// </summary>
-    /// <param name="color"></param>
-    public void SetColor(ProgressColor color) => Color = color;
-
-    /// <summary>
-    /// Set the progress bar label.
-    /// </summary>
-    /// <param name="text"></param>
-    public void SetLabel(string text) => Label = text;
+    } 
 
     /// <summary>
     /// Set the progress bar width.
@@ -62,7 +50,7 @@ public partial class ProgressBar
         {
             switch (parameter.Name)
             {
-                case nameof(Color): Color = (ProgressColor)parameter.Value; break;
+                case nameof(Color): Color = (BsColor)parameter.Value; break;
 
                 case nameof(Class): Class = (string)parameter.Value!; break;
                 case nameof(Id): Id = (string)parameter.Value!; break;
@@ -89,7 +77,7 @@ public partial class ProgressBar
             (BootstrapClass.ProgressBar, true),
             (BootstrapClass.ProgressBarStriped, Type is ProgressType.Striped or ProgressType.StripedAndAnimated),
             (BootstrapClass.ProgressBarAnimated, Type == ProgressType.StripedAndAnimated),
-            (Color.ToProgressColorClass(), Color != ProgressColor.None));
+            (Color.ToBackgroundColorClass(), Color != BsColor.Transparent));
 
     /// <inheritdoc />
     protected override string? StyleNames =>
@@ -106,16 +94,16 @@ public partial class ProgressBar
 
 
 #if NET6_0
-    private ProgressColor color = ProgressColor.None;
+    private BsColor color = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets the progress color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="ProgressColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public ProgressColor Color
+    public BsColor Color
     {
         get => color;
         set
@@ -129,10 +117,10 @@ public partial class ProgressBar
     /// Gets or sets the progress color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="ProgressColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public ProgressColor Color { get; set; } 
+    public BsColor Color { get; set; } = BsColor.Transparent;
 #endif
 
 

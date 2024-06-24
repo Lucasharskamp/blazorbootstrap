@@ -3,12 +3,12 @@
         I will not close if you click outside me. Don't even try to press escape key.
     </BodyTemplate>
     <FooterTemplate>
-        <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
-        <Button Color="ButtonColor.Primary">Understood</Button>
+        <Button Color="BsColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+        <Button Color="BsColor.Primary">Understood</Button>
     </FooterTemplate>
 </Modal>
 
-<Button Color="ButtonColor.Primary" @onclick="OnShowModalClick">Launch static backdrop modal</Button>
+<Button Color="BsColor.Primary" @onclick="OnShowModalClick">Launch static backdrop modal</Button>
 
 @code {
     private Modal modal = default!;

@@ -17,7 +17,7 @@ public partial class DropdownToggleButton : BlazorBootstrapComponentBase
                 case nameof(AutoCloseBehavior): AutoCloseBehavior = (DropdownAutoCloseBehavior)parameter.Value!; break;
                 case nameof(ChildContent): ChildContent = (RenderFragment)parameter.Value!; break;
                 case nameof(Class): Class = (string)parameter.Value!; break;
-                case nameof(Color): Color = (DropdownColor)parameter.Value!; break;
+                case nameof(Color): Color = (BsColor)parameter.Value!; break;
                 case nameof(Disabled): Disabled = (bool)parameter.Value!; break;
                 case nameof(Id): Id = (string)parameter.Value!; break;
                 case nameof(Size): Size = (DropdownSize)parameter.Value!; break;
@@ -64,7 +64,7 @@ public partial class DropdownToggleButton : BlazorBootstrapComponentBase
     protected override string? ClassNames =>
         BuildClassNames(Class,
             (BootstrapClass.Button, true),
-            (Color.ToDropdownButtonColorClass(), Color != DropdownColor.None),
+            (Color.ToButtonColorClass(), Color != BsColor.Transparent),
             (Size.ToDropdownButtonSizeClass(), Size != DropdownSize.None),
             (BootstrapClass.DropdownToggle, true),
             (BootstrapClass.DropdownToggleSplit, Split));
@@ -100,10 +100,10 @@ public partial class DropdownToggleButton : BlazorBootstrapComponentBase
     /// Gets or sets the dropdown toggle button color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="DropdownColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [CascadingParameter(Name = "Color")]
-    public DropdownColor Color { get; set; } = DropdownColor.None;
+    public BsColor Color { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets the disabled.

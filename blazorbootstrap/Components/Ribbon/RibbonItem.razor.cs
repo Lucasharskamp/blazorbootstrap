@@ -29,7 +29,7 @@ public partial class RibbonItem : BlazorBootstrapComponentBase
             {
                 case nameof(ChildContent): ChildContent = (RenderFragment)parameter.Value; break;
                 case nameof(CustomIconName): CustomIconName = (string)parameter.Value; break;
-                case nameof(IconColor): IconColor = (IconColor)parameter.Value; break;
+                case nameof(IconColor): IconColor = (BsColor)parameter.Value; break;
                 case nameof(IconCssClass): IconCssClass = (string)parameter.Value; break;
                 case nameof(IconName): IconName = (IconName)parameter.Value; break;
                 case nameof(IconSize): IconSize = (IconSize)parameter.Value; break;
@@ -85,10 +85,10 @@ public partial class RibbonItem : BlazorBootstrapComponentBase
     /// Gets or sets the icon color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="IconColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public IconColor IconColor { get; set; } = IconColor.None;
+    public BsColor IconColor { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets the icon CSS class.

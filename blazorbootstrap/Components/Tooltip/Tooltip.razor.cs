@@ -8,7 +8,7 @@ public partial class Tooltip : BlazorBootstrapComponentBase
 {
     #region Fields and Constants
 
-    private TooltipColor color = default!;
+    private BsColor color = default!;
     private bool isFirstRenderComplete = false;
     private DotNetObjectReference<Tooltip> objRef = default!;
     private string? title;
@@ -99,7 +99,7 @@ public partial class Tooltip : BlazorBootstrapComponentBase
             {
                 case nameof(ChildContent): ChildContent = (RenderFragment)parameter.Value; break;
                 case nameof(Class): Class = (string)parameter.Value; break;
-                case nameof(Color): Color = (TooltipColor)parameter.Value; break;
+                case nameof(Color): Color = (BsColor)parameter.Value; break;
                 case nameof(Id): Id = (string)parameter.Value!; break;
                 case nameof(IsHtml): IsHtml = (bool)parameter.Value; break;
                 case nameof(Placement): Placement = (TooltipPlacement)parameter.Value; break;
@@ -132,10 +132,10 @@ public partial class Tooltip : BlazorBootstrapComponentBase
     /// Gets or sets the tooltip color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="TooltipColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public TooltipColor Color { get; set; } = TooltipColor.None;
+    public BsColor Color { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets a value indicating whether to display the content as HTML instead of text.

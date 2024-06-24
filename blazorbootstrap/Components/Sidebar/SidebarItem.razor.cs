@@ -53,8 +53,8 @@ public partial class SidebarItem : BlazorBootstrapComponentBase
                 case nameof(HasChildren): HasChildren = (bool)parameter.Value; break;
                 case nameof(Href): Href = (string)parameter.Value; break;
                 case nameof(IconColor): 
-                    IconColor = (IconColor)parameter.Value;
-                    IconColorCssClass = IconColor.ToIconColorClass();
+                    IconColor = (BsColor)parameter.Value;
+                    IconColorCssClass = IconColor.ToTextColorClass();
                     break;
                 case nameof(IconName): IconName = (IconName)parameter.Value; break;
                 case nameof(Id): Id = (string)parameter.Value!; break;
@@ -130,10 +130,10 @@ public partial class SidebarItem : BlazorBootstrapComponentBase
     /// Gets or sets the icon color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="IconColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public IconColor IconColor { get; set; } = IconColor.None;
+    public BsColor IconColor { get; set; } = BsColor.Transparent;
 
     private string IconColorCssClass { get; set; } = "";
 

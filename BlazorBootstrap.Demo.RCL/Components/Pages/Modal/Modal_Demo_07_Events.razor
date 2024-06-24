@@ -11,13 +11,13 @@
     </BodyTemplate>
 
     <FooterTemplate>
-        <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
-        <Button Color="ButtonColor.Primary">Save changes</Button>
+        <Button Color="BsColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+        <Button Color="BsColor.Primary">Save changes</Button>
     </FooterTemplate>
 
 </Modal>
 
-<Button Color="ButtonColor.Primary" @onclick="OnShowModalClick">Show Modal</Button>
+<Button Color="BsColor.Primary" @onclick="OnShowModalClick">Show Modal</Button>
 
 @code {
     private Modal modal = default!;
@@ -36,26 +36,26 @@
 
     private void OnModalShowing()
     {
-        ToastService.Notify(new (ToastType.Primary, $"Event: Showing called. DateTime: {DateTime.Now}"));
+        ToastService.Notify(new (BsColor.Primary, $"Event: Showing called. DateTime: {DateTime.Now}"));
     }
 
     private void OnModalShown()
     {
-        ToastService.Notify(new (ToastType.Success, $"Event: Show called. DateTime: {DateTime.Now}"));
+        ToastService.Notify(new (BsColor.Success, $"Event: Show called. DateTime: {DateTime.Now}"));
     }
 
     private void OnModalHiding()
     {
-        ToastService.Notify(new(ToastType.Danger, $"Event: Hiding called. DateTime: {DateTime.Now}"));
+        ToastService.Notify(new(BsColor.Danger, $"Event: Hiding called. DateTime: {DateTime.Now}"));
     }
 
     private void OnModalHidden()
     {
-        ToastService.Notify(new(ToastType.Warning, $"Event: Hide called. DateTime: {DateTime.Now}"));
+        ToastService.Notify(new(BsColor.Warning, $"Event: Hide called. DateTime: {DateTime.Now}"));
     }
 
     private void OnModalHidePrevented()
     {
-        ToastService.Notify(new(ToastType.Info, $"Event: Hide Prevented called. DateTime: {DateTime.Now}"));
+        ToastService.Notify(new(BsColor.Info, $"Event: Hide Prevented called. DateTime: {DateTime.Now}"));
     }
 }

@@ -59,8 +59,8 @@
 
     <div class="row">
         <div class="col-md-12 text-right">
-            <Button Type="ButtonType.Button" Color="ButtonColor.Secondary" Class="float-end" @onclick="ResetForm">Reset</Button>
-            <Button Type="ButtonType.Submit" Color="ButtonColor.Success" Class="float-end me-2">Submit</Button>
+            <Button Type="ButtonType.Button" Color="BsColor.Secondary" Class="float-end" @onclick="ResetForm">Reset</Button>
+            <Button Type="ButtonType.Submit" Color="BsColor.Success" Class="float-end me-2">Submit</Button>
         </div>
     </div>
 </EditForm>
@@ -80,7 +80,7 @@
     {
         var toastMessage = new ToastMessage
         (
-            type: ToastType.Success,
+            type: BsColor.Success,
             iconName: IconName.Check2All,
             title: "Success!",
             helpText: $"{DateTime.Now.ToLocalTime()}",

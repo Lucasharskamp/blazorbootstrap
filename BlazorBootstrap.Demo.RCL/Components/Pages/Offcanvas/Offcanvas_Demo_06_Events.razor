@@ -10,12 +10,12 @@
     </BodyTemplate>
 
     <FooterTemplate>
-        <Button Color="ButtonColor.Primary" @onclick="(async() => await OnHideOffcanvasClick())">Hide Offcanvas</Button>
+        <Button Color="BsColor.Primary" @onclick="(async() => await OnHideOffcanvasClick())">Hide Offcanvas</Button>
     </FooterTemplate>
 
 </Offcanvas>
 
-<Button Color="ButtonColor.Primary" @onclick="OnShowOffcanvasClick">Show offcanvas</Button>
+<Button Color="BsColor.Primary" @onclick="OnShowOffcanvasClick">Show offcanvas</Button>
 
 @code {
     private Offcanvas offcanvas = default!;

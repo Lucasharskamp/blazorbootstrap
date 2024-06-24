@@ -116,7 +116,7 @@ public partial class Dropdown : BlazorBootstrapComponentBase
                 case nameof(AutoCloseBehavior): AutoCloseBehavior = (DropdownAutoCloseBehavior)parameter.Value!; break;
                 case nameof(ChildContent): ChildContent = (RenderFragment)parameter.Value!; break;
                 case nameof(Class): Class = (string)parameter.Value; break;
-                case nameof(Color): Color = (DropdownColor)parameter.Value!; break;
+                case nameof(Color): Color = (BsColor)parameter.Value!; break;
                 case nameof(Direction): Direction = (DropdownDirection)parameter.Value!; break;
                 case nameof(Disabled): Disabled = (bool)parameter.Value!; break;
                 case nameof(Id): Id = (string)parameter.Value!; break;
@@ -175,10 +175,10 @@ public partial class Dropdown : BlazorBootstrapComponentBase
     /// Gets or sets the dropdown color.
     /// </summary>
     /// <remarks>
-    /// Default value is <see cref="DropdownColor.None" />.
+    /// Default value is <see cref="BsColor.Transparent" />.
     /// </remarks>
     [Parameter]
-    public DropdownColor Color { get; set; } = DropdownColor.None;
+    public BsColor Color { get; set; } = BsColor.Transparent;
 
     /// <summary>
     /// Gets or sets the direction of the dropdown menu.
